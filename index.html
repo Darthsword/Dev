@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<style> 
+			h4
+			{
+				margin:0px;
+				padding:0px;
+				text-transform:uppercase;
+				font-size:18px;
+				font-weight:bold;
+			}
+			#p1
+			{font-size:40px;
+				text-align:center; color: blue;
+				text-transform:uppercase;
+			}
+			/*.Opening { color: red !important;}*/
+			/* ignore me */
+			/*img
+			{
+				width:100%;
+				height:50%;
+			}*/
+			div
+			{
+				margin-bottom:5px;
+				border:1px solid black;
+				padding:10px;
+			}
+		</style>
+	<title>Under development</title>
+	</head>
+	<body>
+		<p id="p1" class="Opening" > 
+			ThisThis is merely a first attempt for you guys and gals who find this Page so dont expect to much out of it i am still learning untill i learn more and i have my alfa game bear with it please.
+		</p> 
+		<p id="p2" class="Opening" style= "font-size:20px"> 
+			For you halo lovers some art and a quick test to see if you could become a spartan.
+		</p>
+		
+		<img src="pictures/halo 1280x800 wallpaper_www.wall321.com_21.jpg"></img>
+		<p> Can you become a spartan test?</P>
+		<div id="boolean-check">
+			<h4>Dodging</h4>
+			<label>Dodging</label>
+			<input id="yesnocheck" type="checkbox" />
+			<button id="boolean-check-btn" onclick="booleanDO()">Button</button>
+			<label>Check box status:</label>
+			<span id="boolean-out"></span>
+		</div>
+		<div id="numbers">
+			<h4>Jumping out of the way</h4>
+			<label>Time one</label>
+			<input id="number-one" type="number" />
+			<label>Distance</label>
+			<input id="number-two" type="number" />
+			<br />
+			<button onclick="numberAddDO()">Add Numbers</button>
+			<button onclick="numberSubDO()">Subtract Numbers</button>
+			<button onclick="numberMulDO()">Multiply Numbers</button>
+			<button onclick="numberDivDO()">Divide Numbers</button>
+			<label>Live or die?:</label>
+			<span id="number-out"></span>
+		</div>
+		<div id="strings">
+			<h4>Ask if you pass</h4>
+			<input id="text-input-1" type="text" />
+			
+			<button onclick="AppendString()">Ask</button>
+			<button onclick="clearParagraph()">Retry</button>
+			<p id="string-paragraph" style="border:1px solid black;padding:5px;background:#CCC;"></p>
+		</div>
+		<script type="text/javascript">
+			function booleanDO()
+			{
+				var boolcheck = document.getElementById("yesnocheck").checked;
+				
+				var output = document.getElementById("boolean-out");
+				if(boolcheck)
+				{
+					output.innerText = "You survive";
+				}
+				else
+				{
+					output.innerText = "You take a plasma bolt to the face and die";
+				}
+			}
+			function getNumbers()
+			{
+				var numberOne = Number(document.getElementById("number-one").value);
+				var numberTwo = Number(document.getElementById("number-two").value);
+				return [numberOne, numberTwo];
+			}
+			function numberAddDO()
+			{
+				var numbers = getNumbers();
+				var output = document.getElementById("number-out");
+				//output.innerText = numbers[0] + numbers[1];
+				var dragon= numbers[0]+numbers[1];
+				if( dragon >50) { output.innerText="Energy sword through your gut" }
+				else { output.innerText=" You live"}
+			}
+			function numberSubDO()
+			{
+				var numbers = getNumbers();
+				var output = document.getElementById("number-out");
+				//output.innerText = numbers[0] - numbers[1];
+				var dragon= numbers[0]-numbers[1];
+				if( dragon >50) { output.innerText="Energy sword through your gut" }
+				else { output.innerText=" You live"}
+			}
+			function numberMulDO()
+			{
+				var numbers = getNumbers();
+				var output = document.getElementById("number-out");
+				//output.innerText = numbers[0] * numbers[1];
+				var dragon= numbers[0]*numbers[1];
+				if( dragon >50) { output.innerText="Energy sword through your gut" }
+				else { output.innerText=" You live"}
+			}
+			function numberDivDO()
+			{
+				var numbers = getNumbers();
+				var output = document.getElementById("number-out");
+				//output.innerText = numbers[0]/numbers[1];
+				var dragon= numbers[0]/numbers[1];
+				if( dragon >50) { output.innerText="Energy sword through your gut" }
+				else { output.innerText=" You live"}
+			}
+			function AppendString()
+			{
+				var inText = document.getElementById("text-input-1").value;
+				var outText = document.getElementById("string-paragraph");
+				if (inText== "How did i do?" ||inText== "dragon will win no matter what") {outText.innerText = "You Passed Congrats" }
+			 else {outText.innerText = "You fail"  ;}
+				document.getElementById("text-input-1").value="";
+			}
+			function clearParagraph()
+			{
+				var outText = document.getElementById("string-paragraph");
+				outText.innerText ="";
+			}
+			
+			"array"
+			"object"
+		</script>
+	 </body>
+</html>
